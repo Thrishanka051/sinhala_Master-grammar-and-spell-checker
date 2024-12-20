@@ -1,0 +1,14 @@
+1. Ensure proper subject-verb-object (SVO) structure.
+   Example: "මම පොතක් කියවමි." is correct. Avoid: "මම කියවමි පොතක්."
+
+2. Avoid redundant particles such as "ක්", "ම", and "ක්වෙ." Use minimal particles.
+   Example: "පොතක් කියවමි." is preferred over "පොතක් කියවමිනි."
+
+3. Use correct verb conjugation depending on tense.
+   Example: Present: "කැවිමි" Past: "කෑවෙමි" Future: "කනවා."
+
+4. Keep sentence length concise. Break long sentences into simpler parts.
+   Example: "මම පොත් දෙකක් කියවා පාඩම් ලිවිය." is preferred over "මම පොත් දෙකක් කියවා සිටිමි එසේ මට පාඩම් ලිවිය."
+
+5. Proper spacing between words is critical.
+   Example: Avoid: "මමපොතක්." Correct: "මම පොතක්."
