@@ -2,7 +2,7 @@
 from spellcheck import SpellCheck
 
 # Create an object for spell checking
-spell_check = SpellCheck('sinhala_full_word_list_2016-10-08.txt')
+spell_check = SpellCheck('merged_filtered_words2.txt')
 
 # Get the string to be checked from the user
 string_to_be_checked = input("Enter the string to be checked: ")
