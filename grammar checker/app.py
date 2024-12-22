@@ -36,13 +36,88 @@ def check_grammar():
             "top_k": 40,
         }
 
+        grammar_rules = """
+                1. Ensure proper subject-verb-object (SVO) structure.
+                Example: "මම පොතක් කියවමි." is correct. Avoid: "මම කියවමි පොතක්."
+
+                2. Avoid redundant particles such as "ක්", "ම", and "ක්වෙ." Use minimal particles.
+                Example: "පොතක් කියවමි." is preferred over "පොතක් කියවමිනි."
+
+                3. Use correct verb conjugation depending on tense.
+                Example: 
+                    Present: "කැවිමි" 
+                    Past: "කෑවෙමි" 
+                    Future: "කනවා."
+
+                4. Keep sentence length concise. Break long sentences into simpler parts.
+                Example: "මම පොත් දෙකක් කියවා පාඩම් ලිවිය." is preferred over "මම පොත් දෙකක් කියවා සිටිමි එසේ මට පාඩම් ලිවිය."
+
+                5. Proper spacing between words is critical.
+                Example: Avoid: "මමපොතක්." Correct: "මම පොතක්."
+
+                6. Ensure proper verb ending according to subject type across all tenses:
+
+                Present Tense:
+                    - First Person Singular (මම): ends with මි
+                        Correct: "මම යමි" (I go)
+                        Incorrect: "මම යයි"
+                    - First Person Plural (අපි): ends with මු
+                        Correct: "අපි යමු" (We go)
+                        Incorrect: "අපි යමි"
+                    - Third Person Singular (ඔහු/ඇය): ends with යි
+                        Correct: "ඔහු/ඇය යයි" (He/She goes)
+                        Incorrect: "ඔහු යමි"
+                    - Third Person Plural (ඔවුන්): ends with ති
+                        Correct: "ඔවුන් යති" (They go)
+                        Incorrect: "ඔවුන් යයි"
+
+                Past Tense:
+                    - First Person Singular (මම): ends with ෙමි
+                        Correct: "මම ගියෙමි" (I went)
+                        Incorrect: "මම ගියා"
+                    - First Person Plural (අපි): ends with ෙමු
+                        Correct: "අපි ගියෙමු" (We went)
+                        Incorrect: "අපි ගියෙමි"
+                    - Third Person Singular Male (ඔහු): ends with ේය
+                        Correct: "ඔහු ගියේය" (He went)
+                        Incorrect: "ඔහු ගියෙමි"
+                    - Third Person Singular Female (ඇය): ends with ාය
+                        Correct: "ඇය ගියාය" (She went)
+                        Incorrect: "ඇය ගියේය"
+                    - Third Person Plural (ඔවුන්): ends with ෝය
+                        Correct: "ඔවුන් ගියෝය" (They went)
+                        Incorrect: "ඔවුන් ගියේය"
+
+                Future Tense:
+                    - First Person Singular (මම): ends with න්නෙමි
+                        Correct: "මම යන්නෙමි" (I will go)
+                        Incorrect: "මම යාවි"
+                    - First Person Plural (අපි): ends with න්නෙමු
+                        Correct: "අපි යන්නෙමු" (We will go)
+                        Incorrect: "අපි යන්නෙමි"
+                    - Third Person Singular (ඔහු/ඇය): ends with ාවි
+                        Correct: "ඔහු/ඇය යාවි" (He/She will go)
+                        Incorrect: "ඔහු යන්නෙමි"
+                    - Third Person Plural (ඔවුන්): ends with ාවිත්
+                        Correct: "ඔවුන් යාවිත්" (They will go)
+                        Incorrect: "ඔවුන් යාවි"
+                """
+
+        # Prepare the prompt with grammar rules
+        prompt = f"""
+        Below are some Sinhala grammar correction rules:
+        {grammar_rules}
+        
+        Correct the following Sinhala sentence based on the rules above and return only the corrected version without any explanations:
+        {input_text}
+        """
         # Start chat and send the input text
         model = genai.GenerativeModel(
             model_name="gemini-2.0-flash-exp",
             generation_config=generation_config,
         )
         chat_session = model.start_chat()
-        response = chat_session.send_message(f"Correct this Sinhala text with minimal changes to ensure grammatical accuracy and return only the corrected version without any explanations: {input_text}")
+        response = chat_session.send_message(prompt)
 
        # Extract the corrected text (assuming the first line of the response is the correction)
         corrected_text = response.text.split("\n")[0].strip() if response.text else "No correction provided."
