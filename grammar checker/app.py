@@ -31,7 +31,7 @@ def check_grammar():
         # Generate grammar correction using Gemini
         generation_config = {
             "temperature": 0.7,
-            "max_output_tokens":200,
+            "max_output_tokens":500,
             "top_p": 0.95,
             "top_k": 40,
         }
