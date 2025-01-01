@@ -6,10 +6,10 @@ CORS(app)
 
 def load_files():
     try:
-        with open("./Dictionary/Sinhala_Grammer.text", "r", encoding="UTF-8") as f:
+        with open("./Sinhala_grammer.text", "r", encoding="UTF-8") as f:
             grammar_rules = f.read()
 
-        with open("./Dictionary/Sinhala_Subjects.text", "r", encoding="UTF-8") as f:
+        with open("./Sinhala_subjects.text", "r", encoding="UTF-8") as f:
             subjects = [line.strip() for line in f.readlines() if line.strip()]
 
         return grammar_rules, subjects
@@ -19,6 +19,7 @@ def load_files():
 
 def parse_grammar_rules(grammar_rules):
     corrections_data = {}
+    fallback_rules = {}
     subject = None
 
     for line in grammar_rules.splitlines():
@@ -30,12 +31,15 @@ def parse_grammar_rules(grammar_rules):
             corrections_data[subject] = {}
         elif "->" in line:
             incorrect, correct = line.split("->")
-            corrections_data[subject][incorrect.strip()] = correct.strip()
+            if subject:
+                corrections_data[subject][incorrect.strip()] = correct.strip()
+            else:
+                fallback_rules[incorrect.strip()] = correct.strip()
 
-    return corrections_data
+    return corrections_data, fallback_rules
 
 def correct_sentence_with_rules(text, grammar_rules, subjects):
-    corrections_data = parse_grammar_rules(grammar_rules)
+    corrections_data, fallback_rules = parse_grammar_rules(grammar_rules)
     sentences = [s.strip() for s in text.replace(",", ".").split(".") if s.strip()]
     corrected_sentences = []
 
@@ -61,7 +65,7 @@ def correct_sentence_with_rules(text, grammar_rules, subjects):
 
         corrected_sentence = sentence
         for incorrect, correct in corrections.items():
-            if incorrect in sentence:
+            if incorrect in corrected_sentence:
                 corrected_sentence = corrected_sentence.replace(incorrect, correct)
 
         corrected_sentences.append(corrected_sentence)
