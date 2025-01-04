@@ -7,7 +7,7 @@ class SpellCheck:
             self.dictionary = Counter(file.read().split())
         
         # Define Sinhala diacritical marks
-        self.diacritical_marks = ['ා', 'ැ', 'ි', 'ු', 'ූ', 'ෘ', 'ෲ', 'ෟ', 'ո', 'ේ', 'ෝ', 'ෞ']
+        self.diacritical_marks = ['ා', 'ැ', 'ි', 'ු', 'ූ', 'ෘ', 'ෲ', 'ෟ', 'ේ', 'ෝ', 'ෞ']
         
     def check(self, string_to_check):
         self.string_to_check = string_to_check
@@ -90,40 +90,36 @@ class SpellCheck:
     def suggestions(self):
         string_words = self.string_to_check.split()
         all_suggestions = []
-        
+
         for word in string_words:
-            # Get matches using custom similarity function
+            # Calculate similarity for all words in the dictionary
             matches = [
                 (dict_word, self.calculate_similarity(word, dict_word))
                 for dict_word in self.dictionary
-                if len(dict_word) >= len(word) - 2 and len(dict_word) <= len(word) + 2
             ]
             
-            # Filter matches above threshold and sort
-            matches = [(w, s) for w, s in matches if s >= 60]
-            matches = sorted(matches, 
-                           key=lambda x: (x[1], self.dictionary[x[0]]), 
-                           reverse=True)
+            # Sort matches by similarity score (descending order)
+            matches = sorted(matches, key=lambda x: x[1], reverse=True)
             
-            # Get top 5 suggestions
-            all_suggestions.append([match[0] for match in matches[:5]])
+            # Get the top 4 suggestions
+            all_suggestions.append(matches[:4])
         
+        # Return suggestions along with scores
         return all_suggestions
-    
+
     def correct(self):
         string_words = self.string_to_check.split()
         corrected_words = []
         
         for word in string_words:
             max_similarity = 0
-            best_match = word
+            best_match = word  # Default to the input word in case no better match is found
             
             for dict_word in self.dictionary:
-                if abs(len(dict_word) - len(word)) <= 2:  # Length filter
-                    similarity = self.calculate_similarity(word, dict_word)
-                    if similarity > max_similarity and similarity >= 60:
-                        max_similarity = similarity
-                        best_match = dict_word
+                similarity = self.calculate_similarity(word, dict_word)
+                if similarity > max_similarity:
+                    max_similarity = similarity
+                    best_match = dict_word
             
             corrected_words.append(best_match)
         

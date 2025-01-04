@@ -1,11 +1,11 @@
 # Import the SpellCheck class
-from spellcheck import SpellCheck
+from spellcheck_2 import SpellCheck
 
 # Create an object for spell checking
 spell_check = SpellCheck('sinhala_full_word_list_2016-10-08.txt')
 
 # Get the string to be checked from the user
-string_to_be_checked = input("Enter22 the string to be checked: ")
+string_to_be_checked = input("Enter1 the string to be checked: ")
 
 # Perform spell checking
 spell_check.check(string_to_be_checked)
