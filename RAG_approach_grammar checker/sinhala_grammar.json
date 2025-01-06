@@ -1,0 +1,130 @@
+[
+  {
+    "index": 1,
+    "rule_type": "subject_verb_agreement",
+    "subject_type": "first_person_singular",
+    "subject": "මම",
+    "verb_endings": {
+      "past": "මි",
+      "present": "මි",
+      "future": "න්නෙමි"
+    },
+    "examples": {
+      "past": "මම ගියෙමි",
+      "present": "මම යමි",
+      "future": "මම යන්නෙමි"
+    }
+  },
+  {
+    "index": 2,
+    "rule_type": "subject_verb_agreement",
+    "subject_type": "first_person_plural",
+    "subject": "අපි",
+    "verb_endings": {
+      "past": "මු",
+      "present": "මු",
+      "future": "න්නෙමු"
+    },
+    "examples": {
+      "past": "අපි ගියෙමු",
+      "present": "අපි යමු",
+      "future": "අපි යන්නෙමු"
+    }
+  },
+  {
+    "index": 3,
+    "rule_type": "subject_verb_agreement",
+    "subject_type": "third_person_singular_male",
+    "subjects": ["ඔහු", "තාත්තා", "සමන්", "ගුරුතුමා"],
+    "verb_endings": {
+      "past": "ේය",
+      "present": "යි",
+      "future": "න්නේය"
+    },
+    "examples": {
+      "past": "ඔහු ගියේය",
+      "present": "ඔහු යයි",
+      "future": "ඔහු යන්නේය"
+    }
+  },
+  {
+    "index": 4,
+    "rule_type": "subject_verb_agreement",
+    "subject_type": "third_person_singular_female",
+    "subjects": ["ඇය", "අම්මා", "ගුරුතුමිය", "මල්ලි"],
+    "verb_endings": {
+      "past": "ාය",
+      "present": "යි",
+      "future": "න්නාය"
+    },
+    "examples": {
+      "past": "ඇය ගියාය",
+      "present": "ඇය යයි",
+      "future": "ඇය යන්නාය"
+    }
+  },
+  {
+    "index": 5,
+    "rule_type": "subject_verb_agreement",
+    "subject_type": "third_person_plural",
+    "subjects": ["ඔවුහු", "ඔවුන්", "අය", "දරුවෝ"],
+    "verb_endings": {
+      "past": "ෝය",
+      "present": "ති",
+      "future": "ාවි"
+    },
+    "examples": {
+      "past": "ඔවුහු ගියෝය",
+      "present": "ඔවුහු යති",
+      "future": "ඔවුහු යාවි"
+    }
+  },
+  {
+    "index": 6,
+    "rule_type": "word_order",
+    "order": "SOV",
+    "description": "Sinhala follows Subject-Object-Verb order",
+    "examples": [
+      {
+        "incorrect": "පන්සලට යනවා මම",
+        "correct": "මම පන්සලට යමි",
+        "explanation": "Present tense with first person singular subject"
+      },
+      {
+        "incorrect": "පොත කියවනවා ඇය",
+        "correct": "ඇය පොත කියවයි",
+        "explanation": "Present tense with third person singular female subject"
+      },
+      {
+        "incorrect": "බත් කනවා ඔවුන්",
+        "correct": "ඔවුන් බත් කති",
+        "explanation": "Present tense with third person plural subject"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "rule_type": "verb_base_examples",
+    "description": "Common verb conjugations for subject-verb agreement",
+    "common_verbs": [
+      {
+        "base": "කර",
+        "meaning": "do",
+        "conjugations": {
+          "past": ["කළෙමි", "කළෙමු", "කළේය", "කළාය", "කළෝය"],
+          "present": ["කරමි", "කරමු", "කරයි", "කරයි", "කරති"],
+          "future": ["කරන්නෙමි", "කරන්නෙමු", "කරන්නේය", "කරන්නාය", "කරාවි"]
+        }
+      },
+      {
+        "base": "කියව",
+        "meaning": "read",
+        "conjugations": {
+          "past": ["කියෙව්වෙමි", "කියෙව්වෙමු", "කියෙව්වේය", "කියෙව්වාය", "කියෙව්වෝය"],
+          "present": ["කියවමි", "කියවමු", "කියවයි", "කියවයි", "කියවති"],
+          "future": ["කියවන්නෙමි", "කියවන්නෙමු", "කියවන්නේය", "කියවන්නාය", "කියවාවි"]
+        }
+      }
+    ]
+  }
+]
