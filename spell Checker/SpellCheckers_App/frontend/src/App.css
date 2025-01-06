@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.flex-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* Align items in a row (default for flexbox) */
+  gap: 20px; /* Add spacing between the columns */
+}
+
+.spell-checker {
+  flex: 1; /* Allow each column to grow equally */
+  text-align: center; /* Center text inside each spell-checker */
+  width: 30%;
+  padding: 20px;
+  border-radius: 8px;
+}

@@ -1,0 +1,62 @@
+/* SpellChecker.css */
+.container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #495057;
+  }
+  
+  .form-select, .form-control {
+    border-radius: 5px;
+  }
+  
+  .result-text {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .list-group-item {
+    background-color: #f8f9fa;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .list-group-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 16px;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #d6e0f5;
+    border-color: #d6e0f5;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .mt-4 {
+    margin-top: 30px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
