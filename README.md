@@ -24,7 +24,7 @@ To run each approach, follow the steps below:
    npm start
    ```
 
-![App Screenshot]("ss/rag 1.jpg")
+![App Screenshot](ss/rag1.JPG)
 
 
 ### 2. Rule-Based Approach
@@ -35,7 +35,7 @@ To run each approach, follow the steps below:
    ```
 3. After the backend is running, double-click on the `index.html` file in the frontend folder to open it in your browser.
    
-   ![App Screenshot]("ss/rule.jpg")
+   ![App Screenshot](ss/rule.JPG)
    
 
 ### 3. LLM-Based Approach
@@ -46,7 +46,7 @@ To run each approach, follow the steps below:
    ```
 3. After the backend is running, double-click on the `index.html` file in the frontend folder to open it in your browser.
 
-![App Screenshot]("ss/llm.jpg")
+![App Screenshot](ss/llm.JPG)
 
 ### 4. Spell Checkers
 1. Navigate to the `spell_checker` folder, then to `spellchecker_App`.
@@ -59,7 +59,7 @@ To run each approach, follow the steps below:
    npm start
    ```
    
-   ![App Screenshot]("ss/1.jpg")
+   ![App Screenshot](ss/1.JPG)
 
 
    
