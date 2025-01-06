@@ -24,6 +24,9 @@ To run each approach, follow the steps below:
    npm start
    ```
 
+![App Screenshot]("ss/rag 1.jpg")
+
+
 ### 2. Rule-Based Approach
 1. Navigate to the rule-based approach folder.
 2. Run the Python app:
@@ -31,6 +34,9 @@ To run each approach, follow the steps below:
    python app.py
    ```
 3. After the backend is running, double-click on the `index.html` file in the frontend folder to open it in your browser.
+   
+   ![App Screenshot]("ss/rule.jpg")
+   
 
 ### 3. LLM-Based Approach
 1. Navigate to the LLM-based approach folder.
@@ -39,6 +45,8 @@ To run each approach, follow the steps below:
    python app.py
    ```
 3. After the backend is running, double-click on the `index.html` file in the frontend folder to open it in your browser.
+
+![App Screenshot]("ss/llm.jpg")
 
 ### 4. Spell Checkers
 1. Navigate to the `spell_checker` folder, then to `spellchecker_App`.
@@ -50,7 +58,11 @@ To run each approach, follow the steps below:
    ```bash
    npm start
    ```
+   
+   ![App Screenshot]("ss/1.jpg")
 
+
+   
 ## Dependencies
 
 Make sure you have the following dependencies installed:
