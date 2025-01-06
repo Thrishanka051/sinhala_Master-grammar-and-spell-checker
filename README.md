@@ -1,6 +1,3 @@
-Here’s a structured `README.md` file for your GitHub project:
-
-```markdown
 # Sinhala Grammar Checker Project
 
 This project provides multiple approaches for building a Sinhala grammar checker, utilizing different methodologies such as Retrieval-Augmented Generation (RAG), rule-based approaches, and large language models (LLM). Additionally, it includes spell checker functionality.
@@ -84,15 +81,3 @@ Feel free to fork the repository, create branches, and contribute with improveme
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-This README structure includes:
-
-- An introduction to your project
-- Setup instructions for each approach (RAG, rule-based, LLM-based, spell checkers)
-- Instructions for installing dependencies
-- Running the application
-- Contribution guidelines
-- License information
-
-Make sure to adjust paths and filenames if they differ in your project.
